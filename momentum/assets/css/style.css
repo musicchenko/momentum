@@ -1,0 +1,371 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto Regular';
+  font-size: 1.5rem;
+  color: white;
+  overflow: hidden;
+  text-shadow: 0px 4px 50px rgba(0, 0, 0, 0.35);
+  -webkit-tap-highlight-color: transparent;
+  transition: background-image 0.5s;
+}
+
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  background: rgb(10, 10, 10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 100;
+}
+
+#preloader.hide {
+  animation: preloader-hidden 1s linear;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+@keyframes preloader-hidden {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.momentum-title {
+  font-family: 'Roboto Light';
+  font-size: 2rem;
+  display: flex;
+}
+
+.letter {
+  display: block;
+  margin: 0px 5px;
+  animation: preloader-letter-1 1s linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.for-rs {
+  font-family: 'Roboto Black';
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+@keyframes preloader-letter-1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+header {
+  width: calc(100% - 40px);
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.weather-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#weather-icon-wrapper {
+  width: 30px;
+  height: 30px;
+  animation: weather-icon-spin 12s linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes weather-icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#sun-icon, #cloud-icon, #rain-icon {
+  fill: white;
+  width: 30px;
+  height: 30px;
+  display: none;
+  margin: auto;
+}
+
+.current-weather {
+  display: block !important;
+}
+
+#temperature {
+  font-family: 'Roboto Medium';
+  font-size: 1.6rem;
+  vertical-align: middle;
+  padding: 0px 0px 0px 5px;
+}
+
+#humidity, #windy {
+  font-family: 'Roboto Light';
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+#city {
+  margin-top: 10px;
+  font-family: 'Roboto Medium';
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.time-and-date {
+  width: 100%;
+  text-align: center;
+}
+
+#time {
+  font-family: 'Roboto Thin';
+  font-size: 10rem;
+  letter-spacing: 6px;
+  line-height: 190px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#date {
+  font-family: 'Roboto Bold';
+  font-size: 1.2rem;
+  margin-top: 0px;
+}
+
+.welcome {
+  font-family: 'Roboto Medium';
+  font-size: 3rem;
+  margin: 50px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#good {
+  font-family: 'Roboto Light';
+  vertical-align: middle;
+}
+
+#name, #goal, #city {
+  min-width: 1px;
+  outline: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#name {
+  margin-left: 10px;
+}
+
+#goal {
+  font-family: 'Roboto Light';
+  font-size: 2rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.today {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-family: 'Roboto Black';
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+#today {
+    font-family: 'Roboto Regular';
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.arrow-btn {
+  height: 100%;
+  border: none;
+  padding: 0px 20px;
+  background-color: transparent;
+  font-family: 'Roboto Regular';
+  font-size: 1rem;
+  color: white;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity .25s;
+}
+
+.arrow-btn:hover {
+  opacity: 0.75;
+  cursor: pointer;
+  transition: opacity .25s;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  vertical-align: middle;
+}
+
+#left-arrow-icon {
+  transform: rotate(180deg);
+  margin-right: 12px;
+}
+
+#right-arrow-icon {
+  margin-left: 12px;
+}
+
+footer {
+  width: calc(100% - 40px);
+  height: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#quote {
+  font-family: 'Roboto Light';
+  font-size: 1.4rem;
+  text-align: center;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#new-quote-btn {
+  border: 0;
+  background-color: white;
+  font-family: 'Roboto Medium';
+  font-size: 0.9rem;
+  display: block;
+  color: black;
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin-left: 10px;
+  outline: none;
+  opacity: 0.5;
+  white-space: nowrap;
+  margin-top: 10px;
+  position: absolute;
+  right: 20px;
+  margin: auto;
+  transition: opacity .25s;
+}
+
+#new-quote-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity .25s;
+}
+
+@media screen and (max-width: 768px) {
+  #time {
+    font-size: 70px;
+  }
+  #good, #name {
+    font-size: 30px;
+  }
+  #goal {
+    font-size: 24px;
+  }
+  .arrow-btn {
+    padding: 0px 6px;
+  }
+  #new-quote-btn {
+    position: relative;
+    display: block;
+    right: 0px;
+    margin-top: 20px;
+  }
+  .today {
+    margin-top: 0px;
+  }
+  .welcome {
+    margin: 30px 0px 30px;
+  }
+  #time {
+    line-height: 100px;
+  }
+  #quote {
+    max-width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #time {
+    font-size: 60px;
+  }
+  #date {
+    font-size: 18px;
+  }
+  #good, #name {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #time {
+    font-size: 60px;
+  }
+  #date {
+    font-size: 18px;
+  }
+  #good, #name {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #time {
+    font-size: 45px;
+  }
+}
